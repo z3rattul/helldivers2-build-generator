@@ -1,0 +1,234 @@
+.h2-container {
+    max-width: 800px;
+    margin: 40px auto;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.h2-container > h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: yellow !important;
+    font-size: 30px;
+    border-bottom: 2px solid yellow;
+}
+
+.controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.controls select {
+    padding: 5px 10px;
+    font-size: 1rem;
+    border-radius: 4px;
+    background-color: white;
+    color: black;
+    outline: 1px solid yellow;
+    transition: border 0.2s;
+}
+
+.controls select:focus {
+    border-color: #ffcc00;
+}
+
+.controls > label:not(.warbond-popup label) {
+    margin-right: 5px;
+    color: white;
+}
+
+.controls label#mode-select,
+.controls label#archetype-select
+{
+    color: white;
+}
+
+.controls select,
+.controls button {
+    padding: 5px 10px;
+    font-size: 1rem;
+}
+
+.controls button#generate-btn{
+    background-color: yellow;
+    border: 1px solid yellow;
+    color: black;
+    font-weight: 500;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.controls button#generate-btn:hover {
+    background-color: #ffcc00;
+}
+
+.controls button#open-warbond-popup{
+    background-color: transparent;
+    border: 1px solid yellow;
+    color: yellow;
+}
+
+#build-output {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+        "primary_weapon secondary_weapon"
+        "grenade armor"
+        "booster stratagems";
+    gap: 15px;
+}
+
+/*@media (max-width: 768px) {
+    #build-output {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto auto auto;
+        grid-template-areas:
+        "primary_weapon"
+        "secondary_weapon"
+        "grenade"
+        "armor"
+        "booster"
+        "stratagems";
+        gap: 15px;
+    }
+}*/
+
+.build-category[data-category="primary_weapon"] {
+    grid-area: primary_weapon;
+}
+.build-category[data-category="secondary_weapon"] {
+    grid-area: secondary_weapon;
+}
+.build-category[data-category="grenade"] {
+    grid-area: grenade;
+}
+.build-category[data-category="armor"] {
+    grid-area: armor;
+}
+.build-category[data-category="booster"] {
+    grid-area: booster;
+}
+.build-category[data-category="stratagems"] {
+    grid-area: stratagems;
+}
+
+.build-category {
+    display: flex;
+    flex-direction: column;
+    gap: .75rem;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 6px;
+    background: #5d5b5b;
+}
+
+.build-category h3 {
+    margin-top: 0;
+    text-align: center;
+    color: white !important;
+    font-size: 20px;
+}
+
+@media (min-width: 768px) {
+    .build-category h3 {
+        text-align: left;
+    }
+}
+
+.build-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 5px;
+}
+
+@media (min-width: 768px) {
+    .build-item {
+        flex-direction: row;
+    }
+}
+
+.build-category .build-item .item-icon {
+    width: 60px;
+    height: 60px;
+    box-sizing: border-box;
+}
+
+.build-category[data-category="primary_weapon"] .build-item .item-icon ,
+.build-category[data-category="secondary_weapon"] .build-item .item-icon {
+    width: 100px;
+    height: 60px;
+}
+
+.build-category:not([data-category="booster"]) .build-item .item-icon {
+    border: 1px solid yellow;
+}
+
+
+.build-item .item-name {
+    color: yellow;
+    font-weight: bold;
+}
+
+
+
+
+/*
+    *
+    *
+    *
+    *
+ */
+#warbond-popup {
+    display: none; /* hidden by default */
+    position: fixed;
+    z-index: 9999; /* чтобы перекрывать остальной контент */
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* полупрозрачный фон */
+    justify-content: center;
+    align-items: center;
+}
+
+.warbond-popup-content {
+    background-color: #fff;
+    width: 300px;
+    max-width: 90%;
+    margin: 0 auto;
+    border-radius: 8px;
+    padding: 20px;
+    position: relative;
+}
+
+.warbond-popup-content h3 {
+    margin-top: 0;
+}
+
+.warbond-checkboxes {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 15px;
+}
+
+.warbond-checkboxes label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.popup-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}

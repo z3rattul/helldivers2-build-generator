@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Helldivers 2 Build Generator</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="h2-container">
+    <h1>Helldivers 2 Build Generator</h1>
+
+    <div class="controls">
+        <label for="mode-select">Generation Mode:</label>
+        <select id="mode-select">
+            <option value="full_random">Full Random</option>
+            <option value="smart_pick">Smart Pick</option>
+        </select>
+
+        <label for="archetype-select">Archetype:</label>
+        <select id="archetype-select">
+            <option value="">-- Not Selected --</option>
+            <option value="terminids">Terminids</option>
+            <option value="automatons">Automatons</option>
+            <option value="illuminates">Illuminates</option>
+        </select>
+
+        <button id="open-warbond-popup" type="button">Filter Warbonds</button>
+
+        <!-- Warbond Popup -->
+        <div id="warbond-popup" class="warbond-popup" style="display: none;">
+            <div class="warbond-popup-content">
+                <h3>Select Allowed Warbonds</h3>
+                <div class="warbond-checkboxes">
+                    <label><input type="checkbox" name="warbond" value="Helldivers Mobilize" checked> Helldivers Mobilize</label>
+                    <label><input type="checkbox" name="warbond" value="Viper Commandos" checked> Viper Commandos</label>
+                    <label><input type="checkbox" name="warbond" value="Polar Patriots" checked> Polar Patriots</label>
+                    <label><input type="checkbox" name="warbond" value="Steeled Veterans" checked> Steeled Veterans</label>
+                    <label><input type="checkbox" name="warbond" value="Truth Enforcers" checked> Truth Enforcers</label>
+                    <label><input type="checkbox" name="warbond" value="Democratic Detonation" checked> Democratic Detonation</label>
+                    <label><input type="checkbox" name="warbond" value="Chemical Agents" checked> Chemical Agents</label>
+                    <label><input type="checkbox" name="warbond" value="Pre-Order Bonus" checked> Pre-Order Bonus</label>
+                    <label><input type="checkbox" name="warbond" value="Cutting Edge" checked> Cutting Edge</label>
+                    <label><input type="checkbox" name="warbond" value="Downloadable Content" checked> Downloadable Content</label>
+                    <label><input type="checkbox" name="warbond" value="Servants of Freedom" checked> Servants of Freedom</label>
+                    <label><input type="checkbox" name="warbond" value="Premium Superstore" checked> Premium Superstore</label>
+                    <label><input type="checkbox" name="warbond" value="Liberty Day" checked> Liberty Day</label>
+                    <label><input type="checkbox" name="warbond" value="Urban Legends" checked> Urban Legends</label>
+                    <label><input type="checkbox" name="warbond" value="Borderline Justice" checked> Borderline Justice</label>
+                    <label><input type="checkbox" name="warbond" value="Superstore"> Superstore</label>
+                    <label><input type="checkbox" name="warbond" value="Bonus"> Bonus (Pre-order, SC Edition etc.)</label>
+                </div>
+                <div class="popup-buttons">
+                    <button id="apply-warbond-filter" type="button">Apply</button>
+                    <button id="close-warbond-popup" type="button">Close</button>
+                </div>
+            </div>
+        </div>
+
+        <button id="generate-btn">Regenerate Build</button>
+    </div>
+
+    <div id="build-output"></div>
+</div>
+
+<script src="js/ui.js"></script>
+</body>
+</html>

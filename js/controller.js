@@ -1,7 +1,6 @@
 import { generateLoadout } from "./generator.js";
 import { renderBuild } from "./view.js";
 
-// Храним разрешённые источники (warbonds)
 let allowedWarbonds = [
     "Helldivers Mobilize",
     "Viper Commandos",
@@ -28,18 +27,15 @@ export function initController() {
     const archetypeSelect = document.getElementById("archetype-select");
     const buildOutput = document.getElementById("build-output");
 
-    // Элементы для popup Warbonds
     const openWarbondPopupBtn = document.getElementById("open-warbond-popup");
     const warbondPopup = document.getElementById("warbond-popup");
     const closeWarbondPopupBtn = document.getElementById("close-warbond-popup");
     const applyWarbondFilterBtn = document.getElementById("apply-warbond-filter");
 
-    // Обработчик кнопки генерации
     generateBtn.addEventListener("click", () => {
         onGenerateClick(modeSelect, archetypeSelect, buildOutput);
     });
 
-    // Обработчики для popup warbonds
     openWarbondPopupBtn.addEventListener("click", () => {
         warbondPopup.style.display = "flex";
     });
@@ -55,13 +51,11 @@ export function initController() {
         onGenerateClick(modeSelect, archetypeSelect, buildOutput);
     });
 
-    // Обновляем разрешённые источники при загрузке страницы
     document.addEventListener("DOMContentLoaded", () => {
         const checkboxes = document.querySelectorAll('input[name="warbond"]:checked');
         allowedWarbonds = Array.from(checkboxes).map(cb => cb.value);
     });
 
-    // Первая генерация билда
     onGenerateClick(modeSelect, archetypeSelect, buildOutput);
 }
 

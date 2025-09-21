@@ -81,6 +81,7 @@ function generateLoadout(mode = "full_random", archetype = null, allowedSources 
                                 return candidates.filter(item =>
                                     item.tags && (item.tags.includes("siege-ready") ||
                                         item.tags.includes("med-kit") ||
+                                        item.tags.includes("ballistic-padding") ||
                                         item.tags.includes("electrical-conduit"))
                                 );
                             default:

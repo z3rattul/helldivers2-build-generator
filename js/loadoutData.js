@@ -521,6 +521,36 @@ const loadoutData = {
                 tags: ["medium", "dominator", "terminids"],
                 compatibilityRules: {},
                 source: "Steeled Veterans"
+            },
+            {
+                id: "AR-2",
+                name: "AR-2 Coyote",
+                type: "primary_weapon",
+                icon: "assets/icons/AR-2_Coyote.png",
+                stats: {
+                    damage: "high",
+                    accuracy: "medium",
+                    weight: "medium",
+                    cost: 0
+                },
+                tags: ["medium", "flame", "terminids"],
+                compatibilityRules: {},
+                source: "Dust Devils"
+            },
+            {
+                id: "VG-70",
+                name: "VG-70 Variable",
+                type: "primary_weapon",
+                icon: "assets/icons/VG-70_Variable.png",
+                stats: {
+                    damage: "high",
+                    accuracy: "medium",
+                    weight: "medium",
+                    cost: 0
+                },
+                tags: ["light"],
+                compatibilityRules: {},
+                source: "Control Group"
             }
         ],
         secondary_weapons: [
@@ -982,7 +1012,18 @@ const loadoutData = {
                 tags: ["gunslinger", "light"],
                 source: "Borderline Justice"
             },
-            // --- Средняя броня ---
+            {
+                id: "BP-32",
+                name: "BP-32 Jackboot",
+                type: "armor",
+                icon: "assets/icons/Armor/BP-32_Jackboot.png",
+                stats: { defense: 50, agility: 550, durability: 125 },
+                special: "Ballistic Padding",
+                cost: { value: 55, currency: "Medals" },
+                tags: ["ballistic-padding", "light"],
+                source: "Force of Law"
+            },
+            // --- Medium armor ---
             {
                 id: "B-01",
                 name: "B-01 Tactical",
@@ -1379,7 +1420,40 @@ const loadoutData = {
                 tags: ["gunslinger", "medium"],
                 source: "Helldivers Mobilize"
             },
-            // --- Тяжёлая броня ---
+            {
+                id: "BP-20",
+                name: "BP-20 Correct Officer",
+                type: "armor",
+                icon: "assets/icons/Armor/BP-20_Correct_Officer.png",
+                stats: { defense: 100, agility: 500, durability: 100 },
+                special: "Ballistic Padding",
+                cost: { value: 45, currency: "Medals" },
+                tags: ["ballistic-padding", "medium"],
+                source: "Force of Law"
+            },
+            {
+                id: "DS-191",
+                name: "DS-191 Scorpion",
+                type: "armor",
+                icon: "assets/icons/Armor/DS-191-Scorpion.png",
+                stats: { defense: 100, agility: 500, durability: 100 },
+                special: "Acclimated",
+                cost: { value: 55, currency: "Medals" },
+                tags: ["flame", "gas", "acid", "medium"],
+                source: "Dust Devils"
+            },
+            {
+                id: "AD-26",
+                name: "AD-26 Bleeding Edge",
+                type: "armor",
+                icon: "assets/icons/Armor/AD-26_Bleeding_Edge.png",
+                stats: { defense: 100, agility: 500, durability: 100 },
+                special: "Electrical Conduit",
+                cost: { value: 18, currency: "Medals" },
+                tags: ["electrical-conduit", "med-kit", "medium"],
+                source: "Control Group"
+            },
+            // --- Heavy armor ---
             {
                 id: "TR-62",
                 name: "TR-62 Knight",
@@ -1577,7 +1651,29 @@ const loadoutData = {
                 cost: { value: 45, currency: "Medals" },
                 tags: ["siege-ready", "heavy"],
                 source: "Urban Legends"
-            }
+            },
+            {
+                id: "DS-42",
+                name: "DS-42 Federations blade",
+                type: "armor",
+                icon: "assets/icons/Armor/DS-42_Federations_blade.png",
+                stats: { defense: 150, agility: 450, durability: 50 },
+                special: "Acclimated",
+                cost: { value: 45, currency: "Medals" },
+                tags: ["flame", "gas", "acid", "heavy"],
+                source: "Dust Devils"
+            },
+            {
+                id: "AD-49",
+                name: "AD-49 Apollonian",
+                type: "armor",
+                icon: "assets/icons/Armor/AD-49_Apollonian.png",
+                stats: { defense: 150, agility: 450, durability: 50 },
+                special: "Electrical Conduit",
+                cost: { value: 18, currency: "Medals" },
+                tags: ["electrical-conduit", "med-kit", "heavy"],
+                source: "Control Group"
+            },
         ],
         grenades: [
             {
@@ -2297,7 +2393,7 @@ const loadoutData = {
                 id: "LIFT-860",
                 name: "LIFT-860 Hover Pack",
                 type: "stratagem",
-                icon: "assets/icons/Borderline Justice/LIFT-860 Hover Pack.png",
+                icon: "assets/icons/Borderline Justice/Hover Pack.svg",
                 stats: {
                     cooldown: "480 sec",
                     cost: 110,
@@ -2361,6 +2457,20 @@ const loadoutData = {
                 },
                 description: "An autonomous drone equipped with a laser rifle for 360° cover. Returns to backpack to cool down.",
                 tags: ["drone", "guard_dog", "backpack"]
+            },
+            {
+                id: "Guard_Dog_K-9",
+                name: "AX/ARC-3 Guard Dog K-9",
+                type: "stratagem",
+                icon: "assets/icons/Force of Law/Guard Dog K-9.svg",
+                stats: {
+                    cooldown: "480 sec",
+                    cost: 110,
+                    currency: "Medals"
+                },
+                description: "A humane, autonomous drone equipped with a modified Arc Thrower. Capable of projecting arcs of lightning through multiple targets. Does not need to recharge between shots.",
+                tags: ["drone", "guard_dog", "backpack", "stun"],
+                source: "Force of Law"
             },
             {
                 id: "Arc_Thrower",
@@ -2605,6 +2715,117 @@ const loadoutData = {
                 },
                 description: "The Supply Pack allows Helldivers to carry supplies to supplement yourself or the team's ammunition, grenades and stims.",
                 tags: ["ammo", "backpack"],
+            },
+            {
+                id: "De-Escalator",
+                name: "GL-52 De-Escalator",
+                type: "stratagem",
+                subtype: "supply_weapon",
+                icon: "assets/icons/Force of Law/GL-52 De-Escalator.svg",
+                stats: {
+                    cooldown: "480 sec",
+                    cost: 85,
+                    currency: "Medals"
+                },
+                description: "A humane grenade launcher firing high-powered arc grenades.",
+                tags: ["heavy", "explosive", "stun", "force_of_law"],
+                compatibilityRules: {},
+                source: "Force of Law"
+            },
+            {
+                id: "Epoch",
+                name: "PLAS-45 Epoch",
+                type: "stratagem",
+                subtype: "supply_weapon",
+                icon: "assets/icons/Control Group/Epoch.svg",
+                stats: {
+                    cooldown: "480 sec",
+                    cost: 75,
+                    currency: "Medals"
+                },
+                description: "A powerful plasma weapon that fires one blast at a time, each blast exploding on impact. Must be charged to fire. Warning: do not overcharge.",
+                tags: ["heavy", "explosive", "chargeup", "control_group"],
+                compatibilityRules: {},
+                source: "Control Group"
+            },
+            {
+                id: "Laser_Sentry",
+                name: "A/LAS-98 Laser Sentry",
+                type: "stratagem",
+                subtype: "supply_weapon",
+                icon: "assets/icons/Control Group/Laser Sentry.svg",
+                stats: {
+                    cooldown: "150 sec",
+                    cost: 85,
+                    currency: "Medals"
+                },
+                description: "A turret firing powerful and precise laser beams. Warning: overloading heat sink may cause adverse effects.",
+                tags: ["laser", "sentry"],
+                compatibilityRules: {},
+                source: "Control Group"
+            },
+            {
+                id: "Warp_Pack",
+                name: "LIFT-182 Warp Pack",
+                type: "stratagem",
+                icon: "assets/icons/Control Group/Warp Pack.svg",
+                stats: {
+                    cooldown: "480 sec",
+                    cost: 110,
+                    currency: "Medals"
+                },
+                description: "A Dark Fluid-powered backpack that generates a portable micro-wormhole. This safe and well-understood technology allows the wearer to warp short distances. Warning: do not use while pack is overloaded.",
+                tags: ["backpack"],
+                compatibilityRules: {},
+                source: "Control Group"
+            },
+            {
+                id: "Expendable_Napalm",
+                name: "EAT-700 Expendable Napalm",
+                type: "stratagem",
+                subtype: "supply_weapon",
+                icon: "assets/icons/Dust Devils/Expendable Napalm.svg",
+                stats: {
+                    cooldown: "140 sec",
+                    cost: 85,
+                    currency: "Medals"
+                },
+                description: "A single-use weapon that fires a missile containing napalm cluster bombs that release upon impact.",
+                tags: ["flame", "dust_devils"],
+                compatibilityRules: {},
+                source: "Dust Devils"
+            },
+            {
+                id: "Speargun",
+                name: "S11 Speargun",
+                type: "stratagem",
+                subtype: "supply_weapon",
+                icon: "assets/icons/Dust Devils/Speargun.svg",
+                stats: {
+                    cooldown: "480 sec",
+                    cost: 85,
+                    currency: "Medals"
+                },
+                description: "A speargun firing heavy-duty projectiles. These projectiles release a cloud of gas on impact, and must be carefully loaded one at a time.",
+                tags: ["gas", "dust_devils"],
+                compatibilityRules: {},
+                source: "Dust Devils"
+            },
+            {
+                id: "Solo_Silo",
+                name: "MS-11 Solo Silo",
+                type: "stratagem",
+                subtype: "supply_weapon",
+                icon: "assets/icons/Dust Devils/Solo Silo.svg",
+                stats: {
+                    cooldown: "180 sec",
+                    cost: 110,
+                    currency: "Medals"
+                },
+                description: "A silo that fits one single, powerful missile. Comes with a handheld targeting remote.",
+                tags: ["dust_devils"],
+                compatibilityRules: {},
+                source: "Dust Devils"
             }
         ],
         boosters: [
@@ -2808,6 +3029,20 @@ const loadoutData = {
                 tags: ["samples", "borderline_justice"],
                 compatibilityRules: {},
                 source: "Borderline Justice"
+            },
+            {
+                id: "stun_pods",
+                name: "Stun Pods",
+                type: "booster",
+                icon: "assets/icons/Force of Law/Stun Pods.png",
+                stats: {
+                    effect: "Exposes Hellpod wiring upon surface contact, stunning any units in the vicinity of the drop site.",
+                    cost: 65,
+                    currency: "Medals"
+                },
+                tags: ["stun", "force_of_law"],
+                compatibilityRules: {},
+                source: "Force of Law"
             }
         ]
     },

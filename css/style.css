@@ -55,6 +55,20 @@
     font-size: 1rem;
 }
 
+.controls button {
+    background-color: rgb(44, 43, 43, 0.9);
+    border: 1px solid yellow;
+    color: yellow;
+}
+
+.controls button:hover,
+.controls button:focus
+{
+    background-color: rgb(238, 238, 51);
+    color: black;
+    cursor: pointer;
+}
+
 .controls button#generate-btn{
     background-color: yellow;
     border: 1px solid yellow;
@@ -191,7 +205,8 @@
 }
 
 .warbond-popup-content {
-    background-color: #fff;
+    background-color: rgb(44, 43, 43, 0.9);
+    border: 1px solid yellow;
     width: 300px;
     max-width: 90%;
     margin: 0 auto;
@@ -202,6 +217,7 @@
 
 .warbond-popup-content h3 {
     margin-top: 0;
+    color: yellow;
 }
 
 .warbond-checkboxes {
@@ -209,6 +225,7 @@
     flex-direction: column;
     gap: 5px;
     margin-bottom: 15px;
+    color: white;
 }
 
 .warbond-checkboxes label {
@@ -216,6 +233,10 @@
     align-items: center;
     gap: 5px;
     cursor: pointer;
+}
+
+.warbond-checkboxes label:hover {
+    text-decoration: underline;
 }
 
 .popup-buttons {

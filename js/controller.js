@@ -17,6 +17,9 @@ let allowedWarbonds = [
     "Liberty Day",
     "Urban Legends",
     "Borderline Justice",
+    "Force of Law",
+    "Control Group",
+    "Dust Devils",
     "Superstore",
     "Bonus"
 ];
